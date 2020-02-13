@@ -33,8 +33,6 @@ class MainActivity : AppCompatActivity() {
         for (i in 0 until QUESTION_COUNT){
             //numberはInt型で999までの乱数の変数
             val number = random.nextInt(1000)
-            //ログをだすnumberってタグでquestion１とかって表示する
-            Log.d("number","Question"+ number.toString())
             //配列の一つをnumberとする
             questions[i] = number
         }
@@ -70,13 +68,6 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"不正解",Toast.LENGTH_SHORT).show()
         }
 
-//
-//        if(answer){
-//            point++
-//            Log.d("maru","正解" + point.toString())
-//        }else{
-//            Log.d("maru","不正解")
-//        }
 
         answerCount++
 
@@ -86,6 +77,7 @@ class MainActivity : AppCompatActivity() {
 
             point = 0
             answerCount = 0
+
         }else{
             textView.text = questions[answerCount].toString()
             textView.setTextColor(Color.BLACK)
@@ -108,13 +100,6 @@ class MainActivity : AppCompatActivity() {
 
         }else{
             Toast.makeText(this,"不正解",Toast.LENGTH_SHORT).show()
-        }
-
-        if(answer){
-            point++
-            Log.d("maru","正解" + point.toString())
-        }else{
-            Log.d("maru","不正解")
         }
 
         answerCount++
